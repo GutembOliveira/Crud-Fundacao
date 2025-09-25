@@ -1,9 +1,9 @@
-Formulário de Fundações – README
+
 
 Este projeto é uma aplicação web em PHP que permite cadastrar, editar, listar e excluir fundações de apoio.
 Os dados são armazenados em SQLite e a aplicação segue o padrão MVC (Model-View-Controller). A escolha do PHP visa simplicidade de instalação e execução em servidor local.
 
-Funcionalidades
+#Funcionalidades
 
 Cadastro de fundações com validação de CNPJ, email e telefone.
 
@@ -17,7 +17,7 @@ Interface web responsiva.
 
 Alertas visuais para sucesso e erro.
 
-Dependências
+#Dependências
 
 Para rodar o projeto, você precisa ter instalado:
 
@@ -29,7 +29,7 @@ Servidor web (ex: Apache, Nginx ou PHP Built-in server)
 
 Observação: nenhuma biblioteca externa foi usada (sem Composer).
 
-Estrutura do Projeto
+#Estrutura do Projeto
 Formulario-Fundacao/
 ├── app/
 │   ├── Controllers/         # Controladores da aplicação
@@ -102,7 +102,7 @@ php -S localhost:8000 -t public
 
 Acesse no navegador: http://localhost:8000
 
-Observações:
+#Observações:
 
 Certifique-se de que o PHP tenha PDO e SQLite habilitados.
 
