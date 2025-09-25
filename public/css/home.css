@@ -1,0 +1,78 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 80%;
+            max-height: 80%;
+            margin: 50px auto;
+            background-color: #f7f3f3;
+            border: 2px solid #005e12;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .table-header {
+            display: flex;
+            
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .table-header .btn-adicionar {
+            background-color: #01df0c;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .table-header .btn-adicionar:hover {
+            background-color: #0ebc0b;
+        }
+
+        .table-header .search-container input[type="text"] {
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #999;
+        }
+
+        .table-header .search-container button {
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .table-header .search-container button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #005e12;
+
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }

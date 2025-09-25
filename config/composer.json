@@ -1,0 +1,13 @@
+{
+    "name": "usuario/formulario-fundacao",
+    "description": "Projeto crud de cadastro de fundações",
+    "require": {
+        "php": ">=8.1",
+        "ext-pdo_sqlite": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+
+
+Este projeto é uma aplicação web em PHP que permite cadastrar, editar, listar e excluir fundações de apoio.
+ Os dados são armazenados em SQLite e a aplicação segue o padrão MVC (Model-View-Controller). A escolha da linguagem PHP foi meramente
+ pela simplicidade de instalação e teste no servidor local.
+
+## Funcionalidades
+- Cadastro de fundações com validação de CNPJ, email e telefone.
+- Edição de fundações existentes.
+- Exclusão de fundações.
+- Busca por CNPJ.
+- Interface web responsiva.
+- Alertas visuais para sucesso e erro.
+
+## Dependências
+Para rodar o projeto você precisa ter instalado:
+- PHP >= 8.0
+- Extensão PDO e PDO_SQLITE habilitada no PHP
+- Servidor web (ex: Apache, Nginx, ou PHP Built-in server)
+
+Observação: nenhuma biblioteca externa foi usada (sem Composer).
+
+## Estrutura do Projeto
+Formulario-Fundacao/
+├── app/
+│   ├── Controllers/         # Controladores da aplicação
+│   │   └── FundacaoController.php
+│   ├── Models/              # Modelos de dados
+│   │   └── Fundacao.php
+│   ├── Repositories/        # Acesso ao banco de dados
+│   │   └── FundacaoRepository.php
+│   └── Services/            # Lógica de negócio
+│       └── FundacaoService.php
+├── config/
+│   ├── Database.php         # Conexão com SQLite
+│   └── bootstrap.php        # Configurações iniciais
+├── public/                  # Arquivos públicos (acesso via navegador)
+│   └── index.php            # Roteador principal
+├── views/                   # Arquivos de interface (HTML + CSS)
+│   ├── cadastroFundacao.php
+│   ├── home.php
+│   ├── css/
+│       ├── style.css        # CSS base (cores, fontes)
+│       └── home.css         # CSS específico da página home
+└── fundacoes.db             # Banco SQLite (gerado automaticamente)
+
+## Fluxo MVC
+1. Roteamento
+   - Todas as requisições passam pelo public/index.php.
+   - O Router decide qual controller e método chamar baseado na URL.
+
+2. Controller
+   - Recebe a requisição, valida dados e chama os serviços correspondentes.
+   - Ex: FundacaoController possui métodos cadastrar(), editarFundacao(), deletarFundacao(), etc.
+   - Retorna a view adequada com dados e mensagens.
+
+3. Service
+   - Contém a lógica de negócio.
+   - Ex: valida se o CNPJ já existe, normaliza telefone, etc.
+   - Chama o Repository para persistência.
+
+4. Repository
+   - Responsável pelo acesso ao banco SQLite.
+   - Métodos para save, update, deleteByCnpj, getAll, getByCnpj.
+
+5. View
+   - Apresenta os dados para o usuário.
+   - Formulários de cadastro e edição utilizam POST.
+   - Página home.php lista todas as fundações e possui botões de editar/excluir.
+
+1. Abra um terminal na pasta do projeto.
+2. Rode o servidor embutido do PHP:
+   php -S localhost:8000 -t public
+3. Acesse no navegador: http://localhost:8000
+
+
+- Certifique-se de que o PHP tenha PDO e SQLite habilitados.
+- O banco fundacoes.db será criado automaticamente ao cadastrar a primeira fundação.
+- Alertas visuais usam modais (verde para sucesso, vermelho para erro).
+- Formulários validam campos obrigatórios, CNPJ, email e número de telefone.
+
+
+Desenvolvido por [Seu Nome].
